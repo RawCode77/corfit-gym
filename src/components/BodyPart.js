@@ -13,7 +13,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => (
       backgroundColor: '#fff',
       borderBottomLeftRadius: '20px',
       width: '270px',
-      height: '282px',
+      height: '280px',
       cursor: 'pointer',
       gap: '47px',
     }}
@@ -30,7 +30,6 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => (
       color="#3A1212"
       textTransform="capitalize"
     >
-      {' '}
       {item}
     </Typography>
   </Stack>

@@ -8,7 +8,7 @@ import Loader from './Loader';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [exercisesPerPage] = useState(6);
+  const exercisesPerPage = 9;
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -28,19 +28,19 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
       setExercises(exercisesData);
     };
-
     fetchExercisesData();
-  }, [bodyPart, setExercises]);
+  }, [bodyPart]);
 
   // Pagination
   // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = Array.isArray(exercises)
-    ? exercises.slice(indexOfFirstExercise, indexOfLastExercise)
-    : [];
+  const currentExercises = exercises.slice(
+    indexOfFirstExercise,
+    indexOfLastExercise,
+  );
 
-  const paginate = (event, value) => {
+  const paginate = (e, value) => {
     setCurrentPage(value);
     window.scrollTo({ top: 1800, behavior: 'smooth' });
   };
@@ -50,7 +50,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   return (
     <Box id="exercises" sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
       <Typography
-        variant="h4"
+        variant="h3"
         fontWeight="bold"
         sx={{ fontSize: { lg: '44px', xs: '30px' } }}
         mb="46px"
@@ -63,11 +63,11 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         flexWrap="wrap"
         justifyContent="center"
       >
-        {currentExercises.map((exercise, idx) => (
-          <ExerciseCard key={idx} exercise={exercise} />
+        {currentExercises.map((exercise, index) => (
+          <ExerciseCard key={index} exercise={exercise} />
         ))}
       </Stack>
-      <Stack sx={{ mt: { lg: '114px', xs: '70px' } }} alignItems="center">
+      <Stack mt="100px" alignItems="center">
         {exercises.length > 9 && (
           <Pagination
             color="standard"
