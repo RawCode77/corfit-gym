@@ -10,12 +10,25 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
 
   useEffect(() => {
     const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData(
-        'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
-        exerciseOptions,
-      );
+      try {
+        const bodyPartsData = await fetchData(
+          'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
+          exerciseOptions,
+        );
 
-      setBodyParts(['all', ...bodyPartsData]);
+        // Check if bodyPartsData is iterable
+        if (!Array.isArray(bodyPartsData)) {
+          throw new Error(
+            'Invalid response format: bodyPartsData is not an array',
+          );
+        }
+
+        setBodyParts(['all', ...bodyPartsData]);
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('Error fetching body parts data:', error.message);
+        // Handle the error appropriately (e.g., show a message to the user)
+      }
     };
 
     fetchExercisesData();
@@ -27,6 +40,11 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
         'https://exercisedb.p.rapidapi.com/exercises',
         exerciseOptions,
       );
+
+      // Check if exercisesData is an array
+      if (!Array.isArray(exercisesData)) {
+        return;
+      }
 
       const searchedExercises = exercisesData.filter(
         (exercise) => exercise.name.toLowerCase().includes(search)
@@ -86,6 +104,7 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
           data={bodyParts}
           setBodyPart={setBodyPart}
           bodyPart={bodyPart}
+          isBodyParts
         />
       </Box>
     </Stack>

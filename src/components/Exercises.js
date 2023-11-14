@@ -31,18 +31,25 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     fetchExercisesData();
   }, [bodyPart]);
 
-  // Pagination
-  // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = exercises.slice(
-    indexOfFirstExercise,
-    indexOfLastExercise,
-  );
+
+  // Check if exercises is an array
+  let currentExercises;
+  if (Array.isArray(exercises)) {
+    // Use the slice method on exercises array
+    currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
+    // eslint-disable-next-line no-console
+    console.log(currentExercises); // Output the sliced array
+  } else {
+    // eslint-disable-next-line no-console
+    console.log('exercises is not an array');
+    currentExercises = [];
+  }
 
   const paginate = (e, value) => {
     setCurrentPage(value);
-    window.scrollTo({ top: 1800, behavior: 'smooth' });
+    window.scrollTo({ top: '1800px', behavior: 'smooth' });
   };
 
   if (!currentExercises.length) return <Loader />;

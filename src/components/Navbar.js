@@ -2,7 +2,7 @@ import { Stack } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../assets/images/Logo.png';
+import Logo from '../assets/images/CORFIT_LOGO-1.png';
 
 const Navbar = () => (
   <Stack
@@ -19,7 +19,7 @@ const Navbar = () => (
       <img
         src={Logo}
         alt="logo"
-        style={{ width: '48px', height: '48px', margin: '0px 20px' }}
+        style={{ width: '133px', height: '153px', margin: '0px 10px' }}
       />
     </Link>
     <Stack
@@ -35,11 +35,12 @@ const Navbar = () => (
           textDecoration: 'none',
           color: '#3A1212',
           borderBottom: '3px solid #FF2625',
+          margin: '48px',
         }}
       >
         Home
       </Link>
-      <a href="#exercises" style={{ textDecoration: 'none', color: '#3A1212' }}>
+      <a href="#exercises" style={{ textDecoration: 'none', color: '#3A1212', margin: '48px 0px' }}>
         Exercises
       </a>
     </Stack>

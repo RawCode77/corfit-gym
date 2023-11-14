@@ -10,39 +10,27 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => (
       sx={{ fontSize: { lg: '44px', xs: '25px' }, ml: '20px' }}
       fontWeight={700}
       color="#000"
-      mb="33px"
+      mb={5}
     >
-      Similar{' '}
-      <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>
-        Target Muscle
-      </span>{' '}
-      exercises
+      Exercises that target the same muscle groups
     </Typography>
-    <Stack direction="row" sx={{ p: 2, position: 'relative' }}>
-      {targetMuscleExercises.length !== 0 ? (
+    <Stack direction="row" sx={{ p: '2', position: 'relative' }}>
+      {targetMuscleExercises.length ? (
         <HorizontalScrollbar data={targetMuscleExercises} />
       ) : (
         <Loader />
       )}
     </Stack>
     <Typography
-      sx={{
-        fontSize: { lg: '44px', xs: '25px' },
-        ml: '20px',
-        mt: { lg: '100px', xs: '60px' },
-      }}
+      sx={{ fontSize: { lg: '44px', xs: '25px' }, ml: '20px' }}
       fontWeight={700}
       color="#000"
-      mb="33px"
+      mb={5}
     >
-      Similar{' '}
-      <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>
-        Equipment
-      </span>{' '}
-      exercises
+      Exercises that use the same equipment
     </Typography>
-    <Stack direction="row" sx={{ p: 2, position: 'relative' }}>
-      {equipmentExercises.length !== 0 ? (
+    <Stack direction="row" sx={{ p: '2', position: 'relative' }}>
+      {equipmentExercises.length ? (
         <HorizontalScrollbar data={equipmentExercises} />
       ) : (
         <Loader />
