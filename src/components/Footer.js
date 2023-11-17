@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
-import Logo from '../assets/images/CORFIT_LOGO-1.png';
+import Logo from '../assets/images/Logo.png';
 
 const Footer = () => (
   <Box mt="80px" bgcolor="#FFF3F4">

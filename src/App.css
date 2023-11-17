@@ -59,12 +59,13 @@ body {
   
   .hero-banner-img {
     position: absolute;
-    right: 40px;
+    right: 50px;
     top: 0px;
     width: 700px;
     height: 900px;
-    margin-top: -330px;
-  
+    margin-top: -230px;
+    border-bottom-left-radius: 25% 100%;
+    border-top-right-radius:25px;
   }
   
   .exercise-card {
@@ -126,10 +127,6 @@ body {
       position: static !important;
     }
   
-    .hero-banner-img {
-      display: none;
-    }
-  
     .exercise-card {
       width: 320px;
     }
@@ -145,4 +142,52 @@ body {
     .exercise-card {
       width: 280px;
     }
+  }
+
+  /* help layout */
+  .help-layout nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+  }
+  .help-layout nav a{
+    padding: 10px;
+    border: 2px solid red;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .help-layout nav a:hover{
+    border-color: var(--primary)
+  }
+  .help-layout nav a.active{
+    background: var(--primary);
+  }
+
+
+  /* faq */
+  .faq .question{
+    background: rgba(0,0,0,0.2);
+    padding: 5px 20px;
+    border-radius: 4px;
+    margin: 20px 0;
+  }
+
+  /* contact form */
+  form {
+    margin-top: 30px;
+  }
+  form input, form label span, form textarea{
+    display: block;
+  }
+  form input, form textarea{
+    margin-bottom: 30px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 0;
+    width: 300px;
+    color: var(--secondary);
+  }
+  form label span{
+    margin-bottom: 10px;
   }
