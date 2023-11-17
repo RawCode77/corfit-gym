@@ -10,33 +10,51 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
 
   useEffect(() => {
     const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData(
-        'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
-        exerciseOptions,
-      );
+      try {
+        const bodyPartsData = await fetchData(
+          'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
+          exerciseOptions,
+        );
 
-      setBodyParts(['all', ...bodyPartsData]);
+        // Ensure bodyPartsData is an array before spreading
+        if (Array.isArray(bodyPartsData)) {
+          setBodyParts(['all', ...bodyPartsData]);
+        } else {
+          console.error('bodyPartsData is not an array:', bodyPartsData);
+        }
+      } catch (error) {
+        console.error('Error fetching body parts data:', error);
+      }
     };
 
-    fetchExercisesData();
-  }, []);
+    fetchExercisesData(); // Add this line to invoke the fetchExercisesData function
+  }, []); // Closing parenthesis for useEffect
 
   const handleSearch = async () => {
     if (search) {
-      const exercisesData = await fetchData(
-        'https://exercisedb.p.rapidapi.com/exercises',
-        exerciseOptions,
-      );
+      try {
+        const exercisesData = await fetchData(
+          'https://exercisedb.p.rapidapi.com/exercises',
+          exerciseOptions,
+        );
 
-      const searchedExercises = exercisesData.filter(
-        (exercise) => exercise.name.toLowerCase().includes(search)
-          || exercise.target.toLowerCase().includes(search)
-          || exercise.equipment.toLowerCase().includes(search)
-          || exercise.bodyPart.toLowerCase().includes(search),
-      );
+        // Ensure exercisesData is an array before filtering
+        if (Array.isArray(exercisesData)) {
+          const searchedExercises = exercisesData.filter(
+            (exercise) => exercise.name.toLowerCase().includes(search)
+              || exercise.target.toLowerCase().includes(search)
+              || exercise.equipment.toLowerCase().includes(search)
+              || exercise.bodyPart.toLowerCase().includes(search),
+          );
 
-      setSearch('');
-      setExercises(searchedExercises);
+          setSearch('');
+          setExercises(searchedExercises);
+        } else {
+          console.error('exercisesData is not an array:', exercisesData);
+        }
+      } catch (error) {
+        console.error('Error fetching exercises data:', error);
+      }
     }
   };
 
@@ -86,7 +104,7 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
           data={bodyParts}
           setBodyPart={setBodyPart}
           bodyPart={bodyPart}
-          // isBodyParts
+          isBodyParts
         />
       </Box>
     </Stack>

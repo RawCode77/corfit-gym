@@ -43,9 +43,28 @@ const Navbar = () => (
       <a href="#exercises" style={{ textDecoration: 'none', color: '#3A1212', margin: '48px 0px' }}>
         Exercises
       </a>
-      <a href="#programs" style={{ textDecoration: 'none', color: '#3A1212', margin: '48px 0px' }}>
+      <Link
+        to="programs"
+        style={{
+          textDecoration: 'none',
+          color: '#3A1212',
+          borderBottom: '3px solid #FF2625',
+          margin: '48px',
+        }}
+      >
         Programs
-      </a>
+      </Link>
+      <Link
+        to="about"
+        style={{
+          textDecoration: 'none',
+          color: '#3A1212',
+          borderBottom: '3px solid #FF2625',
+          margin: '48px',
+        }}
+      >
+        About
+      </Link>
     </Stack>
   </Stack>
 );

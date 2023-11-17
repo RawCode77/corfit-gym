@@ -21,7 +21,7 @@ export const fetchData = async (url, options) => {
     return { json, data };
   } catch (error) {
     console.error('An error occurred while fetching the data:', error);
-    // You can handle the error here, like showing an error message or retrying.
+    // You can handle the error here
     throw error;
   }
 };
