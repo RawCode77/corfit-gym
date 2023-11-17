@@ -13,7 +13,7 @@ const Navbar = () => (
       mt: { sm: '32px', xs: '20px' },
       justifyContent: 'none',
     }}
-    px="20px"
+    px="10px"
   >
     <Link to="/">
       <img
@@ -42,6 +42,9 @@ const Navbar = () => (
       </Link>
       <a href="#exercises" style={{ textDecoration: 'none', color: '#3A1212', margin: '48px 0px' }}>
         Exercises
+      </a>
+      <a href="#programs" style={{ textDecoration: 'none', color: '#3A1212', margin: '48px 0px' }}>
+        Programs
       </a>
     </Stack>
   </Stack>

@@ -8,7 +8,7 @@ import Loader from './Loader';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const exercisesPerPage = 9;
+  const [exercisesPerPage] = useState(6);
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -28,28 +28,21 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
       setExercises(exercisesData);
     };
-    fetchExercisesData();
-  }, [bodyPart]);
 
+    fetchExercisesData();
+  }, [bodyPart, setExercises]);
+
+  // Pagination
+  // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+  const currentExercises = Array.isArray(exercises)
+    ? exercises.slice(indexOfFirstExercise, indexOfLastExercise)
+    : [];
 
-  // Check if exercises is an array
-  let currentExercises;
-  if (Array.isArray(exercises)) {
-    // Use the slice method on exercises array
-    currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
-    // eslint-disable-next-line no-console
-    console.log(currentExercises); // Output the sliced array
-  } else {
-    // eslint-disable-next-line no-console
-    console.log('exercises is not an array');
-    currentExercises = [];
-  }
-
-  const paginate = (e, value) => {
+  const paginate = (event, value) => {
     setCurrentPage(value);
-    window.scrollTo({ top: '1800px', behavior: 'smooth' });
+    window.scrollTo({ top: 1800, behavior: 'smooth' });
   };
 
   if (!currentExercises.length) return <Loader />;
@@ -57,7 +50,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   return (
     <Box id="exercises" sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
       <Typography
-        variant="h3"
+        variant="h4"
         fontWeight="bold"
         sx={{ fontSize: { lg: '44px', xs: '30px' } }}
         mb="46px"
@@ -70,11 +63,11 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         flexWrap="wrap"
         justifyContent="center"
       >
-        {currentExercises.map((exercise, index) => (
-          <ExerciseCard key={index} exercise={exercise} />
+        {currentExercises.map((exercise, idx) => (
+          <ExerciseCard key={idx} exercise={exercise} />
         ))}
       </Stack>
-      <Stack mt="100px" alignItems="center">
+      <Stack sx={{ mt: { lg: '114px', xs: '70px' } }} alignItems="center">
         {exercises.length > 9 && (
           <Pagination
             color="standard"
