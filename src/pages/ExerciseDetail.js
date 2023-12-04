@@ -15,6 +15,7 @@ const ExerciseDetail = () => {
   const [equipmentExercises, setEquipmentExercises] = useState([]);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const fetchExercisesData = async () => {
       const exerciseDbUrl = 'https://exercisedb.p.rapidapi.com';
       const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com';
@@ -46,6 +47,8 @@ const ExerciseDetail = () => {
 
     fetchExercisesData();
   }, [id]);
+
+  if (!exerciseDetail) return <div>No Data</div>;
 
   return (
     <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
