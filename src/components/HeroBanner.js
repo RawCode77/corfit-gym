@@ -1,7 +1,7 @@
 import { Box, Typography, Button } from '@mui/material';
 import React from 'react';
 
-import HeroBannerImage from '../assets/images/banner1.png';
+import HeroBannerImage from '../assets/images/hero_image.jpg';
 
 const HeroBanner = () => (
   <Box
@@ -13,6 +13,7 @@ const HeroBanner = () => (
       C.O.R.F.I.T Club
     </Typography>
     <Typography
+      color="error"
       fontWeight={700}
       sx={{ fontSize: { lg: '44px', xs: '40px' } }}
       mb="70px"

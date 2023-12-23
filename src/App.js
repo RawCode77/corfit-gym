@@ -1,5 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Box } from '@mui/material';
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
@@ -26,7 +26,6 @@ const App = () => (
         <Route path="faq" element={<Faq />} />
         <Route path="contact" element={<Contact />} />
       </Route>
-
       <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer />

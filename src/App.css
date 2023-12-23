@@ -1,12 +1,13 @@
 body {
     font-family: 'Josefin Sans';
-    background-color: #080808;
+    background-color: #fbf8f8;
   }
   
   * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    
   
   }
   
