@@ -1,6 +1,11 @@
+:root {
+  --secondary: #2b3452;
+}
+
 body {
     font-family: 'Josefin Sans';
-    background-color: #fbf8f8;
+    /* background-color: #fbf8f8; */
+    background:var(--secondary);
   }
   
   * {

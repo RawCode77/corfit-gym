@@ -33,7 +33,7 @@ const Navbar = () => (
         to="/"
         style={{
           textDecoration: 'none',
-          color: '#3A1212',
+          color: 'white',
           borderBottom: '3px solid #FF2625',
           margin: '48px',
         }}
@@ -42,7 +42,7 @@ const Navbar = () => (
       </Link>
       <a
         href="#exercises"
-        style={{ textDecoration: 'none', color: '#3A1212', margin: '48px 0px' }}
+        style={{ textDecoration: 'none', color: 'white', margin: '48px 0px' }}
       >
         Exercises
       </a>
@@ -50,7 +50,7 @@ const Navbar = () => (
         to="programs"
         style={{
           textDecoration: 'none',
-          color: '#3A1212',
+          color: 'white',
           borderBottom: '3px solid #FF2625',
           margin: '48px',
         }}
@@ -61,7 +61,7 @@ const Navbar = () => (
         to="about"
         style={{
           textDecoration: 'none',
-          color: '#3A1212',
+          color: 'white',
           borderBottom: '3px solid #FF2625',
           margin: '48px',
         }}
@@ -69,10 +69,21 @@ const Navbar = () => (
         About
       </Link>
       <Link
+        to="memories"
+        style={{
+          textDecoration: 'none',
+          color: 'white',
+          borderBottom: '3px solid #FF2625',
+          margin: '48px',
+        }}
+      >
+        Memories
+      </Link>
+      <Link
         to="help"
         style={{
           textDecoration: 'none',
-          color: '#3A1212',
+          color: 'white',
           borderBottom: '3px solid #FF2625',
           margin: '48px',
         }}
@@ -84,7 +95,6 @@ const Navbar = () => (
         <Outlet />
       </main>
     </Stack>
-
   </Stack>
 );
 
