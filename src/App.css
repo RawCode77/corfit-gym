@@ -4,7 +4,6 @@
 
 body {
     font-family: 'Josefin Sans';
-    /* background-color: #fbf8f8; */
     background:var(--secondary);
   }
   
@@ -54,9 +53,13 @@ body {
     flex-wrap: wrap;
   }
 
-  /* .react-horizontal-scrolling-menu--inner-wrapper {
+  .react-horizontal-scrolling-menu--inner-wrapper {
     width:100%;
-  } */
+  }
+
+  .react-horizontal-scrolling-menu--scroll-container {
+    width: calc(100vw - 104px);
+    }
   
   .detail-image {
     width: 729px;
@@ -125,13 +128,16 @@ body {
   
   
     .react-horizontal-scrolling-menu--scroll-container {
-      width: 500px;
-      /* width: 75vw; */
+      width: 75vw;
     }
   
     .left-arrow,
     .right-arrow {
       position: static !important;
+    }
+
+    .hero-banner-img {
+      display: none;
     }
   
     .exercise-card {

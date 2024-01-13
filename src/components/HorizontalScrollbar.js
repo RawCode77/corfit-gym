@@ -12,7 +12,7 @@ const LeftArrow = () => {
 
   return (
     <Typography onClick={() => scrollPrev()} className="right-arrow">
-      <img src={LeftArrowIcon} alt="right-arrow" />
+      <img src={LeftArrowIcon} alt="left-arrow" />
     </Typography>
   );
 };
@@ -37,13 +37,10 @@ const HorizontalScrollbar = ({ data, bodyPart, setBodyPart, isBodyParts }) => (
         m="0 20px"
       >
         {isBodyParts ? (
-          <BodyPart
-            item={item}
-            bodyPart={bodyPart}
-            setBodyPart={setBodyPart}
-          />
-        )
-          : <ExerciseCard item={item} />}
+          <BodyPart item={item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+        ) : (
+          <ExerciseCard exercise={item} />
+        )}
       </Box>
     ))}
   </ScrollMenu>

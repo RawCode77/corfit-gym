@@ -35,8 +35,8 @@ const Detail = ({ exerciseDetail }) => {
         </Typography>
         <Typography variant="h6">
           Stimulate your muscles to grow.{name} {' '}
-          is one of the best <br /> exercises to target your {target}. Its one of numerous
-          ways to <br /> isolate and target those muscle.
+          is one of the best exercises to target your {target}. Its one of numerous
+          ways to <br />isolate and target those muscle.
         </Typography>
         {extraDetail.map((item) => (
           <Stack key={item.name} direction="row" gap="24px" alignItems="center">
