@@ -4,11 +4,23 @@ import React, { useEffect, useState } from 'react';
 
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import ExerciseCard from './ExerciseCard';
-import Loader from './Loader';
+// import Loader from './Loader';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [exercisesPerPage] = useState(6);
+  const exercisesPerPage = 9;
+
+  const indexOfLastExercise = currentPage * exercisesPerPage;
+  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+  const currentExercises = exercises.slice(
+    indexOfFirstExercise,
+    indexOfLastExercise,
+  );
+  // Pagination
+  const paginate = (e, value) => {
+    setCurrentPage(value);
+    window.scrollTo({ top: 1800, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -32,27 +44,12 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     fetchExercisesData();
   }, [bodyPart, setExercises]);
 
-  // Pagination
-  const indexOfLastExercise = currentPage * exercisesPerPage;
-  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = exercises.slice(
-    indexOfFirstExercise,
-    indexOfLastExercise,
-  );
-
-  const paginate = (event, value) => {
-    setCurrentPage(value);
-    window.scrollTo({ top: 1800, behavior: 'smooth' });
-  };
-
-  if (!currentExercises.length) return <Loader />;
+  // if (!currentExercises.length) return <Loader />;
 
   return (
     <Box id="exercises" sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
       <Typography
         variant="h4"
-        fontWeight="bold"
-        sx={{ fontSize: { lg: '44px', xs: '30px' } }}
         mb="46px"
       >
         Showing Results
@@ -63,11 +60,11 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         flexWrap="wrap"
         justifyContent="center"
       >
-        {currentExercises.map((exercise, id) => (
-          <ExerciseCard key={id} exercise={exercise} />
+        {currentExercises.map((exercise, index) => (
+          <ExerciseCard key={index} exercise={exercise} />
         ))}
       </Stack>
-      <Stack sx={{ mt: { lg: '114px', xs: '70px' } }} alignItems="center">
+      <Stack mt="100px" alignItems="center">
         {exercises.length > 9 && (
           <Pagination
             color="standard"

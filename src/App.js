@@ -1,6 +1,7 @@
-/* eslint-disable react/react-in-jsx-scope */
+
 import { Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
+import React from 'react';
 
 import './App.css';
 import Footer from './components/Footer';

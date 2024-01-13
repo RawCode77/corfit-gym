@@ -30,7 +30,7 @@ const ExerciseDetail = () => {
         `${youtubeSearchUrl}/search?query=${exerciseDetailData.name}`,
         youtubeOptions,
       );
-      setExerciseVideos(exerciseVideosData.contents);
+      setExerciseVideos(exerciseVideosData);
 
       const targetMuscleExercisesData = await fetchData(
         `${exerciseDbUrl}/exercises/target/${exerciseDetailData.target}`,
@@ -47,8 +47,6 @@ const ExerciseDetail = () => {
 
     fetchExercisesData();
   }, [id]);
-
-  if (!exerciseDetail) return <div>No Data</div>;
 
   return (
     <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>

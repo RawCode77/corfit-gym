@@ -54,9 +54,9 @@ body {
     flex-wrap: wrap;
   }
 
-  .react-horizontal-scrolling-menu--inner-wrapper {
+  /* .react-horizontal-scrolling-menu--inner-wrapper {
     width:100%;
-  }
+  } */
   
   .detail-image {
     width: 729px;
@@ -125,8 +125,8 @@ body {
   
   
     .react-horizontal-scrolling-menu--scroll-container {
-      /**width: 500px;**/
-      width: 75vw;
+      width: 500px;
+      /* width: 75vw; */
     }
   
     .left-arrow,
