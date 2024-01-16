@@ -19,7 +19,9 @@ The application, named C.O.R.F.I.T., will provide students and trainees with an 
 access fitness resources and strengthen their knowledge. This project aligns with C.O.R.F.I.T.'s mission to 
 provide the best education to aspiring personal trainers and bodybuilding enthusiasts.
 
-![endorsements](../assets/images/hero_image.jpg)
+
+![corfit_assoc](https://github.com/RawCode77/corfit-gym/assets/124092089/a884e0b9-22df-44a6-80ed-17e067e3e632)
+
 ## Advanced React Best Practices
 
 
