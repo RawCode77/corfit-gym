@@ -104,10 +104,10 @@ function App() {
 
 ## Task to completed
 
-- [x] #739
-- [ ] https://github.com/octo-org/octo-repo/issues/740
-- [x] Add delight to the experience when all tasks are complete :tada:
-- [ ] A\(Optional) Open a followup issue
+
+
+
+      
 ## Acknowledgements
 
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
