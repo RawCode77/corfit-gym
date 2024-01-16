@@ -33,16 +33,12 @@ In addition to the application development, this project will emphasize advanced
 
 
 ![Image Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa_x77yPK9Kj4Nx87mKoNKmB6jfjbccXz3vQ&usqp=CAU)
-
 [React](https://react.dev/s)
-![Image Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7o2A3b52ne59URpcyQgHT2bjG3YHb8OeeWg&usqp=CAU)
 
+![Image Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7o2A3b52ne59URpcyQgHT2bjG3YHb8OeeWg&usqp=CAU)
 [Node JS](https://nodejs.org/docs/latest/api/)
 
-
-
 ![Image Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLYqGSn00Wk30ZDoTHIQP9I82JXyXBkIwgMw&usqp=CAU)
-
 [Express  JS](https://expressjs.com/en/guide/routing.html)
 
 
