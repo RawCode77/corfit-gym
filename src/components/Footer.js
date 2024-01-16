@@ -15,8 +15,7 @@ const Footer = () => (
     </Stack>
     <Typography
       variant="h5"
-      sx={{ fontSize: { lg: '28px', xs: '20px' } }}
-      mt="41px"
+      mt="30px"
       textAlign="center"
       pb="40px"
     >
